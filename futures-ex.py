@@ -12,13 +12,16 @@ kc_futures = ccxt.kucoinfutures({
 
 symbol = 'XBTUSDTM'
 
+# Test:
 def ask_bid(symbol=symbol):
+    '''returns: ask: num, bid: num'''
+
     ob = kc_futures.fetch_order_book(symbol)
     ask = ob['asks'][0][0]
     bid = ob['bids'][0][0]
 
-    print(f'ask: {ask} | bid: {bid}')
-
     return ask, bid
 
-ask_bid()
+ask, bid = ask_bid()
+
+print(f'ask: {ask} | bid: {bid}')
