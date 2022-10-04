@@ -43,10 +43,10 @@ while True:
         try:
             check = client.get_order_details(orderId=order['orderId'])
             print(check)
-        except Excpetion as e:
+        except Exception as e:
             print(f'Error while checking order status: {e}')
 
-        if check['isActive'] == true:
+        if check['isActive'] == True:
             print ('Order placed at {}'.format(pd.Timestamp.now()))
             break
 
